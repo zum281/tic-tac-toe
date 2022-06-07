@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import { Grid } from "@components/grid";
 
 const Home: NextPage = () => {
-	return <div>meow</div>;
+	return <Grid />;
 };
 
 export default Home;
