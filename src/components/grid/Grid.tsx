@@ -11,7 +11,7 @@ export const Grid: FC = () => {
 				gridTemplateColumns: "repeat(3,100px)",
 			}}>
 			{grid.map((item, index) => (
-				<Cell key={index} index={index} item={item} />
+				<Cell key={index} item={item} />
 			))}
 		</div>
 	);

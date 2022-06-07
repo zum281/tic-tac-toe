@@ -25,7 +25,9 @@
 			"@pages": ["src/pages"],
 			"@pages/*": ["src/pages/*"],
 			"@styles": ["src/styles"],
-			"@styles/*": ["src/styles/*"]
+			"@styles/*": ["src/styles/*"],
+			"@/types": ["src/types"],
+			"@/types/*": ["src/types/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

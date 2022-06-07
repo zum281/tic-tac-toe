@@ -1,12 +1,11 @@
 import { createContext, useContext } from "react";
-
-export type Player = "X" | "O";
+import { Player, Grid } from "@/types/game";
 
 export type GameContextType = {
 	currentPlayer: Player;
 	setCurrentPlayer: (player: Player) => void;
-	grid: Player[] | ""[];
-	setGrid: (grid: Player[] | ""[]) => void;
+	grid: Grid;
+	setGrid: (grid: Grid) => void;
 	winner: Player | null;
 	setWinner: (winner: Player | null) => void;
 };
