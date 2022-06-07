@@ -2,7 +2,7 @@ import React, { FunctionComponent as FC } from "react";
 import { useGameContext } from "@context/GameContext";
 import { StyledCell } from "./Cell.style";
 import { Cell as CellType } from "@/types/game";
-import checkWinner from "../../utils/checkWinner";
+import checkWinner from "@utils/checkWinner";
 
 type Props = {
 	item: CellType;
@@ -20,9 +20,8 @@ export const Cell: FC<Props> = ({ item }) => {
 		if (item.value !== "") return;
 		if (winner) return;
 
-		const index = item.index;
 		const newGrid = [...grid];
-		newGrid[index].value = currentPlayer;
+		newGrid[item.index].value = currentPlayer;
 		setGrid([...newGrid]);
 
 		const w = checkWinner(newGrid, currentPlayer);
@@ -31,5 +30,9 @@ export const Cell: FC<Props> = ({ item }) => {
 		setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
 	};
 
-	return <StyledCell onClick={handleClick}>{item.value}</StyledCell>;
+	return (
+		<StyledCell onClick={handleClick} index={item.index}>
+			{item.value}
+		</StyledCell>
+	);
 };
