@@ -42,8 +42,8 @@ export const Close = styled.button`
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	width: 44px;
-	height: 44px;
+	width: 40px;
+	height: 40px;
 	border: none;
 	outline: none;
 	background-color: transparent;
@@ -59,8 +59,7 @@ export const Close = styled.button`
 	&:focus,
 	&:hover {
 		border-radius: 50%;
-		background-color: var(--clr-black);
-		color: var(--clr-white);
+		background-color: rgba(var(--rgb-primary), 0.7);
 
 		path {
 			fill: var(--clr-white);
@@ -98,7 +97,8 @@ export const PlayAgain = styled.button`
 
 	&:focus,
 	&:hover {
-		background-color: var(--clr-black);
+		border: 1px solid var(--clr-primary);
+		background-color: var(--clr-primary);
 		color: var(--clr-white);
 	}
 `;

@@ -1,4 +1,4 @@
-import React, { FunctionComponent as FC, useState } from "react";
+import React, { FunctionComponent as FC, useMemo, useState } from "react";
 import { useGameContext } from "@context/GameContext";
 import { Grid as GridType } from "@/types/game";
 import {
@@ -27,6 +27,11 @@ export const Modal: FC = () => {
 
 	const closeModal = () => setIsOpen(false);
 
+	const winnerColor = useMemo(
+		() => (winner === "X" ? "var(--clr-player-X)" : "var(--clr-player-O)"),
+		[winner]
+	);
+
 	return (
 		<>
 			{isOpen && (
@@ -38,7 +43,7 @@ export const Modal: FC = () => {
 						</Close>
 						<Text>
 							<p>The winner is</p>
-							<h2>{winner}</h2>
+							<h2 style={{ color: winnerColor }}>{winner}</h2>
 						</Text>
 						<PlayAgain onClick={resetGame}>Play again</PlayAgain>
 					</Container>

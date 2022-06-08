@@ -7,6 +7,10 @@ const GlobalStyles = () => {
 				:root {
 					--clr-black: #333;
 					--clr-white: #eee;
+					--clr-primary: #db5461;
+					--rgb-primary: 219, 84, 97;
+					--clr-player-X: #016fb9;
+					--clr-player-O: #ff9505;
 					--font-body: "Lato", sans-serif;
 				}
 				*,
