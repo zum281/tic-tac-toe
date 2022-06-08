@@ -1,7 +1,7 @@
 import React, { FunctionComponent as FC, ReactNode, useState } from "react";
 import { GameContext } from "./GameContext";
 import { Player, Grid } from "@/types/game";
-import { INITIAL_GRID } from "../constants";
+import { INITIAL_GRID } from "@constants";
 
 type Props = {
 	children: ReactNode;

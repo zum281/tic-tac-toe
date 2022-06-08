@@ -1,29 +1,17 @@
 import type { NextPage } from "next";
 import { Grid } from "@components/grid";
 import { useGameContext } from "@context/GameContext";
-import { Grid as GridType } from "@/types/game";
+import { Modal } from "../components/modal";
 
 const Home: NextPage = () => {
-	const { currentPlayer, winner, setWinner, setGrid, setCurrentPlayer } =
-		useGameContext();
-
-	const resetGame = () => {
-		setWinner(null);
-		const newGrid: GridType = Array(9)
-			.fill("")
-			.map((_, index) => {
-				return { value: "", index };
-			});
-		setGrid([...newGrid]);
-		setCurrentPlayer("X");
-	};
+	const { currentPlayer, winner } = useGameContext();
 
 	return (
 		<div>
 			<h2>Current player: {currentPlayer}</h2>
 			<Grid />
-			{winner && <h2>Winner: {winner}</h2>}
-			{winner && <button onClick={resetGame}>Play again</button>}
+			{winner && <Modal />}
+			<Modal />
 		</div>
 	);
 };
