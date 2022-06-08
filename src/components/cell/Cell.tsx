@@ -1,7 +1,7 @@
 import React, { FunctionComponent as FC } from "react";
 import { useGameContext } from "@context/GameContext";
 import { StyledCell } from "./Cell.style";
-import { Cell as CellType } from "@/types/game";
+import { Cell as CellType, Player } from "@/types/game";
 import checkWinner from "@utils/checkWinner";
 
 type Props = {
@@ -31,7 +31,10 @@ export const Cell: FC<Props> = ({ item }) => {
 	};
 
 	return (
-		<StyledCell onClick={handleClick} index={item.index}>
+		<StyledCell
+			onClick={handleClick}
+			index={item.index}
+			player={item.value as Player}>
 			{item.value}
 		</StyledCell>
 	);

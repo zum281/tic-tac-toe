@@ -27,11 +27,6 @@ export const Modal: FC = () => {
 
 	const closeModal = () => setIsOpen(false);
 
-	const winnerColor = useMemo(
-		() => (winner === "X" ? "var(--clr-player-X)" : "var(--clr-player-O)"),
-		[winner]
-	);
-
 	return (
 		<>
 			{isOpen && (
@@ -41,9 +36,9 @@ export const Modal: FC = () => {
 						<Close onClick={closeModal} aria-label='Close'>
 							<CloseIcon />
 						</Close>
-						<Text>
+						<Text winner={winner}>
 							<p>The winner is</p>
-							<h2 style={{ color: winnerColor }}>{winner}</h2>
+							<h2>{winner}</h2>
 						</Text>
 						<PlayAgain onClick={resetGame}>Play again</PlayAgain>
 					</Container>
