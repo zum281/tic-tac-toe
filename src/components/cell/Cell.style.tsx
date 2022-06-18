@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import { Player } from "@/types/game";
 
-export const StyledCell = styled.button<{ index: number; player: Player }>`
+type Props = {
+	index: number;
+	player: Player;
+};
+
+export const StyledCell = styled.button<Props>`
 	aspect-ratio: 1;
 	outline: none;
 	background-color: transparent;
