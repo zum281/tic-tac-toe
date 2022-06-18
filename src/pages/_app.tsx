@@ -1,14 +1,17 @@
-import type { AppProps } from "next/app";
-import GameProvider from "@context/GameProvider";
-import GlobalStyles from "@styles/Global";
+import type { AppProps } from 'next/app'
+import GameProvider from '@context/GameProvider'
+import GlobalStyles from '@styles/Global'
+import { Layout } from '@components/shared/layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<GameProvider>
 			<GlobalStyles />
-			<Component {...pageProps} />
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</GameProvider>
-	);
+	)
 }
 
-export default MyApp;
+export default MyApp

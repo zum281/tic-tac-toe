@@ -1,4 +1,4 @@
-import { Global, css } from "@emotion/react";
+import { Global, css } from '@emotion/react'
 
 const GlobalStyles = () => {
 	return (
@@ -11,7 +11,7 @@ const GlobalStyles = () => {
 					--rgb-primary: 219, 84, 97;
 					--clr-player-X: #016fb9;
 					--clr-player-O: #ff9505;
-					--font-body: "Lato", sans-serif;
+					--font-body: 'Lato', sans-serif;
 				}
 				*,
 				*::before,
@@ -33,9 +33,15 @@ const GlobalStyles = () => {
 					background-color: var(--clr-white);
 					color: var(--clr-black);
 				}
+
+				header,
+				main {
+					max-width: 800px;
+					margin: 0 auto;
+				}
 			`}
 		/>
-	);
-};
+	)
+}
 
-export default GlobalStyles;
+export default GlobalStyles

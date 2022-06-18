@@ -1,7 +1,7 @@
 import React, { FunctionComponent as FC, useState } from 'react'
 import { useGameContext } from '@context/GameContext'
 import { Grid as GridType } from '@/types/game'
-import { CloseIcon } from '@components/shared/CloseIcon'
+import { CloseIcon } from '@components/shared/close-icon'
 import { Container, Overlay, Close, PlayAgain, Text } from './Modal.style'
 
 type Props = {
