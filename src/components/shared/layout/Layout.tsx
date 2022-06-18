@@ -11,7 +11,6 @@ export const Layout: FC<Props> = ({ children }) => {
 	const { winner, tie } = useGameContext()
 	return (
 		<>
-			<InitGame />
 			{winner && <Results />}
 			{tie && <Results withWinner={false} />}
 			<Header />

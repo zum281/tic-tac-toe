@@ -10,22 +10,18 @@ type Props = {
 export const Results: FC<Props> = ({ withWinner = true }) => {
 	const { winner, resetGame } = useGameContext()
 	return (
-		<>
-			<Modal onClose={resetGame}>
-				<div>
-					<Text winner={winner}>
-						{withWinner ? (
-							<>
-								<p>The winner is</p>
-								<h2>{winner}</h2>
-							</>
-						) : (
-							<h2>Tie!</h2>
-						)}
-					</Text>
-					<Button onClick={resetGame}>Play Again</Button>
-				</div>
-			</Modal>
-		</>
+		<Modal onClose={resetGame}>
+			<Text winner={winner}>
+				{withWinner ? (
+					<>
+						<p>The winner is</p>
+						<h2>{winner}</h2>
+					</>
+				) : (
+					<h2>Tie!</h2>
+				)}
+			</Text>
+			<Button onClick={resetGame}>Play Again</Button>
+		</Modal>
 	)
 }

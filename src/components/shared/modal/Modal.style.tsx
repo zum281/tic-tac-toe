@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { Player } from '@/types/game'
 
 export const Container = styled.div`
 	--width: 400px;

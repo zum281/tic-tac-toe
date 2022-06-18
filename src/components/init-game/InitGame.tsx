@@ -1,4 +1,5 @@
 import React, { FunctionComponent as FC } from 'react'
+import { Modal } from '@components/shared/modal'
 export const InitGame: FC = () => {
-	return <div>InitGame</div>
+	return <Modal onClose={() => {}}>meoow</Modal>
 }
