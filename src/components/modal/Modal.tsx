@@ -1,4 +1,4 @@
-import React, { FunctionComponent as FC, useMemo, useState } from "react";
+import React, { FunctionComponent as FC, useState } from "react";
 import { useGameContext } from "@context/GameContext";
 import { Grid as GridType } from "@/types/game";
 import { CloseIcon } from "@components/shared/CloseIcon";
