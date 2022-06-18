@@ -1,26 +1,15 @@
-import React, { FunctionComponent as FC, useState } from 'react'
+import React, { FunctionComponent as FC } from 'react'
 import { useGameContext } from '@context/GameContext'
-import { Grid as GridType } from '@/types/game'
 import { CloseIcon } from '@components/shared/close-icon'
-import { Container, Overlay, Close, PlayAgain, Text } from './Modal.style'
+import { Container, Overlay, Close, Text } from './Modal.style'
+import { Button } from '@styles/Button'
 
 type Props = {
 	withWinner?: boolean
 }
 
 export const Modal: FC<Props> = ({ withWinner = true }) => {
-	const { winner, setWinner, setGrid, setCurrentPlayer } = useGameContext()
-
-	const resetGame = () => {
-		setWinner(null)
-		const newGrid: GridType = Array(9)
-			.fill('')
-			.map((_, index) => {
-				return { value: '', index }
-			})
-		setGrid([...newGrid])
-		setCurrentPlayer('X')
-	}
+	const { winner, resetGame } = useGameContext()
 
 	return (
 		<>
@@ -40,7 +29,7 @@ export const Modal: FC<Props> = ({ withWinner = true }) => {
 						<h2>Tie!</h2>
 					</Text>
 				)}
-				<PlayAgain onClick={resetGame}>Play again</PlayAgain>
+				<Button onClick={resetGame}>Play Again</Button>
 			</Container>
 		</>
 	)

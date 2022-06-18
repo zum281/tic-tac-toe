@@ -1,16 +1,28 @@
-import React, { FunctionComponent as FC, ReactNode, useState } from "react";
-import { GameContext } from "./GameContext";
-import { Player, Grid } from "@/types/game";
-import { INITIAL_GRID } from "@constants";
+import React, { FunctionComponent as FC, ReactNode, useState } from 'react'
+import { GameContext } from './GameContext'
+import { Player, Grid } from '@/types/game'
+import { INITIAL_GRID } from '@constants'
 
 type Props = {
-	children: ReactNode;
-};
+	children: ReactNode
+}
 
 const GameProvider: FC<Props> = ({ children }) => {
-	const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
-	const [grid, setGrid] = useState<Grid>(INITIAL_GRID);
-	const [winner, setWinner] = useState<Player | null>(null);
+	const [currentPlayer, setCurrentPlayer] = useState<Player>('X')
+	const [grid, setGrid] = useState<Grid>(INITIAL_GRID)
+	const [winner, setWinner] = useState<Player | null>(null)
+
+	const resetGame = () => {
+		setWinner(null)
+		const newGrid: Grid = Array(9)
+			.fill('')
+			.map((_, index) => {
+				return { value: '', index }
+			})
+		setGrid([...newGrid])
+		setCurrentPlayer('X')
+	}
+
 	const value = {
 		currentPlayer,
 		setCurrentPlayer,
@@ -18,11 +30,10 @@ const GameProvider: FC<Props> = ({ children }) => {
 		setGrid,
 		winner,
 		setWinner,
-	};
+		resetGame,
+	}
 
-	return (
-		<GameContext.Provider value={value}>{children}</GameContext.Provider>
-	);
-};
+	return <GameContext.Provider value={value}>{children}</GameContext.Provider>
+}
 
-export default GameProvider;
+export default GameProvider

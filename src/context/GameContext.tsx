@@ -1,22 +1,24 @@
-import { createContext, useContext } from "react";
-import { Player, Grid } from "@/types/game";
+import { createContext, useContext } from 'react'
+import { Player, Grid } from '@/types/game'
 
 export type GameContextType = {
-	currentPlayer: Player;
-	setCurrentPlayer: (player: Player) => void;
-	grid: Grid;
-	setGrid: (grid: Grid) => void;
-	winner: Player | null;
-	setWinner: (winner: Player | null) => void;
-};
+	currentPlayer: Player
+	setCurrentPlayer: (player: Player) => void
+	grid: Grid
+	setGrid: (grid: Grid) => void
+	winner: Player | null
+	setWinner: (winner: Player | null) => void
+	resetGame: () => void
+}
 
 export const GameContext = createContext<GameContextType>({
-	currentPlayer: "X",
+	currentPlayer: 'X',
 	setCurrentPlayer: () => {},
-	grid: Array(9).fill(""),
+	grid: Array(9).fill(''),
 	setGrid: () => {},
 	winner: null,
 	setWinner: () => {},
-});
+	resetGame: () => {},
+})
 
-export const useGameContext = () => useContext(GameContext);
+export const useGameContext = () => useContext(GameContext)

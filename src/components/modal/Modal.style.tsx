@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Player } from "@/types/game";
+import styled from '@emotion/styled'
+import { Player } from '@/types/game'
 
 export const Container = styled.div`
 	--width: 400px;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 	border-radius: 2px;
 	background-color: #fff;
 	z-index: 1;
-`;
+`
 
 export const Text = styled.div<{ winner: Player | null }>`
 	text-align: center;
@@ -30,16 +30,16 @@ export const Text = styled.div<{ winner: Player | null }>`
 		font-size: 3.5rem;
 		font-weight: 700;
 		color: ${({ winner }) =>
-			winner ? `var(--clr-player-${winner})` : "unset"};
+			winner ? `var(--clr-player-${winner})` : 'unset'};
 	}
-`;
+`
 
 export const Overlay = styled.div`
 	position: absolute;
 	inset: 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: -1;
-`;
+`
 
 export const Close = styled.button`
 	position: absolute;
@@ -69,25 +69,4 @@ export const Close = styled.button`
 			stroke: var(--clr-white);
 		}
 	}
-`;
-
-export const PlayAgain = styled.button`
-	border: 1px solid var(--clr-black);
-	border-radius: 2px;
-	outline: none;
-	background-color: var(--clr-white);
-	color: var(--clr-black);
-	font-size: 1.2rem;
-	font-weight: 500;
-	padding: 10px 20px;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-
-	&:focus,
-	&:hover {
-		border: 1px solid var(--clr-primary);
-		background-color: var(--clr-primary);
-		color: var(--clr-white);
-	}
-`;
+`
