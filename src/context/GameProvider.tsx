@@ -17,6 +17,7 @@ const GameProvider: FC<Props> = ({ children }) => {
 	const [currentPlayer, setCurrentPlayer] = useState<Player>('X')
 	const [grid, setGrid] = useState<Grid>(INITIAL_GRID)
 	const [winner, setWinner] = useState<Player | null>(null)
+	const [ai, setAi] = useState<boolean>(false)
 
 	const resetGame = () => {
 		setWinner(null)
@@ -40,6 +41,8 @@ const GameProvider: FC<Props> = ({ children }) => {
 		setWinner,
 		resetGame,
 		tie,
+		ai,
+		setAi,
 	}
 
 	return <GameContext.Provider value={value}>{children}</GameContext.Provider>

@@ -10,6 +10,8 @@ export type GameContextType = {
 	setWinner: (winner: Player | null) => void
 	resetGame: () => void
 	tie: boolean
+	ai: boolean
+	setAi: (ai: boolean) => void
 }
 
 export const GameContext = createContext<GameContextType>({
@@ -21,6 +23,8 @@ export const GameContext = createContext<GameContextType>({
 	setWinner: () => {},
 	resetGame: () => {},
 	tie: false,
+	ai: false,
+	setAi: () => {},
 })
 
 export const useGameContext = () => useContext(GameContext)

@@ -19,21 +19,6 @@ export const Container = styled.div`
 	z-index: 1;
 `
 
-export const Text = styled.div<{ winner: Player | null }>`
-	text-align: center;
-	p {
-		font-size: 1.1rem;
-		font-weight: 500;
-	}
-
-	h2 {
-		font-size: 3.5rem;
-		font-weight: 700;
-		color: ${({ winner }) =>
-			winner ? `var(--clr-player-${winner})` : 'unset'};
-	}
-`
-
 export const Overlay = styled.div`
 	position: absolute;
 	inset: 0;
