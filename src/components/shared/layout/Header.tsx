@@ -11,7 +11,7 @@ export const Header: FC = () => {
 			</Title>
 			<nav>
 				<p>
-					<span>{currentPlayer}</span>'s turn
+					<span>{currentPlayer}</span>&apos;s turn
 				</p>
 				<Button onClick={resetGame} variant='small'>
 					New Game
