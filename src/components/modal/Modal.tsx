@@ -1,14 +1,9 @@
 import React, { FunctionComponent as FC, useMemo, useState } from "react";
 import { useGameContext } from "@context/GameContext";
 import { Grid as GridType } from "@/types/game";
-import {
-	Container,
-	Overlay,
-	Close,
-	CloseIcon,
-	PlayAgain,
-	Text,
-} from "./Modal.style";
+import { CloseIcon } from "@components/shared/CloseIcon";
+import { Container, Overlay, Close, PlayAgain, Text } from "./Modal.style";
+
 export const Modal: FC = () => {
 	const { winner, setWinner, setGrid, setCurrentPlayer } = useGameContext();
 	const [isOpen, setIsOpen] = useState(winner ? true : false);
