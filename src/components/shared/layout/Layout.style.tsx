@@ -12,10 +12,6 @@ export const StyledHeader = styled.header<Props>`
 	padding-block: 20px;
 	border-bottom: 2px solid var(--clr-primary);
 
-	h1 {
-		font-family: var(--font-header);
-	}
-
 	nav {
 		display: flex;
 		align-items: center;
@@ -32,5 +28,12 @@ export const StyledHeader = styled.header<Props>`
 		color: ${({ currentPlayer }) => `var(--clr-player-${currentPlayer})`};
 		font-size: 1.75rem;
 		font-weight: 700;
+	}
+`
+
+export const Title = styled.h1`
+	font-family: var(--font-header);
+	span {
+		color: var(--clr-primary);
 	}
 `

@@ -1,13 +1,21 @@
 import { Global, css } from '@emotion/react'
+import { useGameContext } from '@context/GameContext'
+import { useMemo } from 'react'
 
 const GlobalStyles = () => {
+	const { currentPlayer, winner } = useGameContext()
+	const colorPrimary = useMemo(() => {
+		if (winner) return `var(--clr-player-${winner})`
+		return `var(--clr-player-${currentPlayer})`
+	}, [currentPlayer, winner])
 	return (
 		<Global
 			styles={css`
 				:root {
 					--clr-black: #333;
 					--clr-white: #eee;
-					--clr-primary: #db5461;
+					/* --clr-primary: #db5461; */
+					--clr-primary: ${colorPrimary};
 					--rgb-primary: 219, 84, 97;
 					--clr-player-X: #016fb9;
 					--clr-player-O: #ff9505;
