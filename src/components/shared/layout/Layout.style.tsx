@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
+import { Player } from '@/types/game'
 
-export const StyledHeader = styled.header`
+type Props = {
+	currentPlayer: Player
+}
+
+export const StyledHeader = styled.header<Props>`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -15,6 +20,17 @@ export const StyledHeader = styled.header`
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1em;
+		gap: 2.5em;
+	}
+
+	p {
+		letter-spacing: 0.2ch;
+		font-size: 1.1rem;
+	}
+
+	span {
+		color: ${({ currentPlayer }) => `var(--clr-player-${currentPlayer})`};
+		font-size: 1.75rem;
+		font-weight: 700;
 	}
 `
