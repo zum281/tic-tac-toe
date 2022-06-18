@@ -1,7 +1,13 @@
-import React, { FunctionComponent as FC, ReactNode, useState } from 'react'
+import React, {
+	FunctionComponent as FC,
+	ReactNode,
+	useMemo,
+	useState,
+} from 'react'
 import { GameContext } from './GameContext'
 import { Player, Grid } from '@/types/game'
 import { INITIAL_GRID } from '@constants'
+import { isGridFull } from '@utils/misc'
 
 type Props = {
 	children: ReactNode
@@ -23,6 +29,8 @@ const GameProvider: FC<Props> = ({ children }) => {
 		setCurrentPlayer('X')
 	}
 
+	const tie = useMemo(() => !winner && isGridFull(grid), [currentPlayer])
+
 	const value = {
 		currentPlayer,
 		setCurrentPlayer,
@@ -31,6 +39,7 @@ const GameProvider: FC<Props> = ({ children }) => {
 		winner,
 		setWinner,
 		resetGame,
+		tie,
 	}
 
 	return <GameContext.Provider value={value}>{children}</GameContext.Provider>
