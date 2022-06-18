@@ -1,7 +1,6 @@
 import React, { FunctionComponent as FC } from 'react'
 import { useGameContext } from '@context/GameContext'
 import { Header } from './Header'
-import { InitGame } from '@components/init-game'
 import { Results } from '@components/results'
 
 type Props = {
