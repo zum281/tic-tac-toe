@@ -1,14 +1,9 @@
-import React, { FunctionComponent as FC, useEffect } from "react";
-import { Cell } from "@components/cell";
-import { useGameContext } from "@context/GameContext";
-import { Container } from "./Grid.style";
+import React, { FunctionComponent as FC } from 'react'
+import { Cell } from '@components/cell'
+import { useGameContext } from '@context/GameContext'
+import { Container } from './Grid.style'
 export const Grid: FC = () => {
-	const { grid } = useGameContext();
-
-	useEffect(() => {
-		console.log("grid changed");
-		console.log(grid);
-	}, [grid]);
+	const { grid } = useGameContext()
 
 	return (
 		<Container>
@@ -16,5 +11,5 @@ export const Grid: FC = () => {
 				<Cell key={index} item={item} />
 			))}
 		</Container>
-	);
-};
+	)
+}

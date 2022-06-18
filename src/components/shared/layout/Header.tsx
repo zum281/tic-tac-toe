@@ -9,7 +9,9 @@ export const Header: FC = () => {
 			<h1>Tic Tac Toe</h1>
 			<nav>
 				<span>{currentPlayer}'s turn</span>
-				<Button onClick={resetGame}>New Game</Button>
+				<Button onClick={resetGame} variant='small'>
+					New Game
+				</Button>
 			</nav>
 		</StyledHeader>
 	)

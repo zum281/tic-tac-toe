@@ -11,6 +11,7 @@ const GlobalStyles = () => {
 					--rgb-primary: 219, 84, 97;
 					--clr-player-X: #016fb9;
 					--clr-player-O: #ff9505;
+					--font-header: 'Lora', serif;
 					--font-body: 'Lato', sans-serif;
 				}
 				*,
