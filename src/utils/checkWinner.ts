@@ -1,4 +1,4 @@
-import { Grid, Player } from "@/types/game";
+import { Grid, Player } from '@/types/game'
 
 const checkWinner = (grid: Grid, currentPlayer: Player): Player | null => {
 	const winningCombinations = [
@@ -10,19 +10,19 @@ const checkWinner = (grid: Grid, currentPlayer: Player): Player | null => {
 		[2, 5, 8],
 		[0, 4, 8],
 		[2, 4, 6],
-	];
+	]
 
 	for (let i = 0; i < winningCombinations.length; i++) {
-		const [a, b, c] = winningCombinations[i];
+		const [a, b, c] = winningCombinations[i]
 		if (
 			grid[a].value === currentPlayer &&
 			grid[b].value === currentPlayer &&
 			grid[c].value === currentPlayer
 		) {
-			return currentPlayer;
+			return currentPlayer
 		}
 	}
-	return null;
-};
+	return null
+}
 
-export default checkWinner;
+export default checkWinner

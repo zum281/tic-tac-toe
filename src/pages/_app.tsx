@@ -1,16 +1,19 @@
 import type { AppProps } from 'next/app'
 import GameProvider from '@context/game-context/GameProvider'
-import GlobalStyles from '@styles/Global'
+import { HistoryProvider } from '@context/history-context/HistoryProvider'
 import { Layout } from '@components/shared/layout'
+import GlobalStyles from '@styles/Global'
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<GameProvider>
-			<GlobalStyles />
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
-		</GameProvider>
+		<HistoryProvider>
+			<GameProvider>
+				<GlobalStyles />
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</GameProvider>
+		</HistoryProvider>
 	)
 }
 
