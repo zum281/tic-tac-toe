@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const Container = styled.div`
-	--width: 400px;
+	--width: 300px;
 	position: absolute;
 	left: calc(50% - var(--width) / 2);
 	bottom: 50%;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 	justify-content: space-evenly;
 
 	width: var(--width);
-	min-height: 35vh;
+	min-height: 20vh;
 	border: 1px solid var(--clr-black);
 	border-radius: 2px;
 	background-color: #fff;
