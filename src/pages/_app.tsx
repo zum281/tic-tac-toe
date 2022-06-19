@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import GameProvider from '@context/GameProvider'
+import GameProvider from '@context/game-context/GameProvider'
 import GlobalStyles from '@styles/Global'
 import { Layout } from '@components/shared/layout'
 

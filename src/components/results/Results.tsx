@@ -1,6 +1,6 @@
 import React, { FunctionComponent as FC } from 'react'
 import { Modal } from '@components/shared/modal'
-import { useGameContext } from '@context/GameContext'
+import { useGameContext } from '@context/game-context/GameContext'
 import { Button } from '@styles/Button'
 import { Text } from './Results.style'
 

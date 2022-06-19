@@ -1,5 +1,5 @@
 import React, { FunctionComponent as FC } from 'react'
-import { useGameContext } from '@context/GameContext'
+import { useGameContext } from '@context/game-context/GameContext'
 import { Header } from './Header'
 import { Results } from '@components/results'
 

@@ -1,5 +1,5 @@
 import { Global, css } from '@emotion/react'
-import { useGameContext } from '@context/GameContext'
+import { useGameContext } from '@context/game-context/GameContext'
 import { useMemo } from 'react'
 import { hexToRgb } from '@utils/misc'
 import { COLORS } from '@constants'

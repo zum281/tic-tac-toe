@@ -1,5 +1,5 @@
 import React, { FunctionComponent as FC } from 'react'
-import { useGameContext } from '@context/GameContext'
+import { useGameContext } from '@context/game-context/GameContext'
 import { StyledHeader, Title } from './Layout.style'
 import { Button } from '@styles/Button'
 export const Header: FC = () => {
