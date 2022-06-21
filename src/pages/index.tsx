@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 import { Grid } from '@components/grid'
+import { History } from '@components/history'
 import { useGameContext } from '@context/game-context/GameContext'
 import { useHistoryContext } from '@context/history-context/HistoryContext'
 import { useEffect } from 'react'
 
 const Home: NextPage = () => {
 	const { winner, tie } = useGameContext()
-	const { result, addResult } = useHistoryContext()
+	const { addResult } = useHistoryContext()
 
 	useEffect(() => {
 		if (winner) addResult(winner)
@@ -14,14 +15,10 @@ const Home: NextPage = () => {
 	}, [winner, tie])
 
 	return (
-		<div>
-			{result.map((item, index) => (
-				<div key={index}>
-					{index}: {item}
-				</div>
-			))}
+		<>
 			<Grid />
-		</div>
+			<History />
+		</>
 	)
 }
 

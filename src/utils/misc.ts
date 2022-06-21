@@ -1,4 +1,4 @@
-import { Grid } from '@/types/game'
+import { Grid, Player } from '@/types/game'
 
 export const isGridFull = (grid: Grid) => {
 	let res = true
@@ -19,3 +19,16 @@ export const hexToRgb = (hex: string) => {
 		  }
 		: null
 }
+
+const getOccurrence = (array: (Player | 'tie')[], value: string) => {
+	var count = 0
+	array.forEach((v) => v === value && count++)
+	return count
+}
+
+export const getXWins = (result: (Player | 'tie')[]) =>
+	getOccurrence(result, 'X')
+export const getOWins = (result: (Player | 'tie')[]) =>
+	getOccurrence(result, 'O')
+export const getTies = (result: (Player | 'tie')[]) =>
+	getOccurrence(result, 'tie')
